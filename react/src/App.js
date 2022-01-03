@@ -26,6 +26,8 @@ export default function App() {
         <Router>
           <Topbar />
           <Routes>
+            // these routes must be reflected in the ui() function of the rust
+            // application.
             <Route path="/imageview">
               <Route path=":imageName" element={<Image />} />
             </Route>
