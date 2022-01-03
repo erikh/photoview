@@ -1,6 +1,7 @@
 import * as React from "react";
 
-import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
 
 import { useParams } from "react-router-dom";
 
@@ -16,8 +17,8 @@ export default function Image() {
   });
 
   return (
-    <Container fixed>
+    <Box sx={{ maxWidth: "100%", minWidth: "100%", bgcolor: "#121212" }}>
       <img id="image" />
-    </Container>
+    </Box>
   );
 }
