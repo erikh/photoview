@@ -3,14 +3,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import grey from "@mui/material/colors/grey";
 import { createTheme, ThemeProvider } from "@mui/material";
-import CssBaseline from '@mui/material/CssBaseline';
+import CssBaseline from "@mui/material/CssBaseline";
 
 import Topbar from "./components/topbar";
 import Welcome from "./components/welcome";
+import Image from "./components/image";
 
 const darkTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
     background: {
       default: grey[700],
       paper: grey[900],
@@ -25,7 +26,10 @@ export default function App() {
         <Router>
           <Topbar />
           <Routes>
-            <Route path="*" element={<Welcome/>} />
+            <Route path="/imageview">
+              <Route path=":imageName" element={<Image />} />
+            </Route>
+            <Route path="*" element={<Welcome />} />
           </Routes>
         </Router>
       </ThemeProvider>

@@ -27,7 +27,6 @@ async fn main() -> tide::Result<()> {
 
     app.with(tide::log::LogMiddleware::new());
     app.at("/images/:image").get(image);
-    app.at("/imageview/:image").get(ui);
     app.at("/*").get(ui);
     app.at("/").get(ui);
 
@@ -35,7 +34,7 @@ async fn main() -> tide::Result<()> {
     Ok(())
 }
 
-#[derive(Clone)]
+#[derive(Debug, Clone)]
 pub struct State {
     path: PathBuf,
 }
@@ -73,7 +72,8 @@ async fn ui(req: Request<State>) -> tide::Result {
         return Ok(Response::builder(500).build());
     }
 
-    if path == "/" {
+    // NOTE: all react routes must be reflected here!!!
+    if path == "/" || path.starts_with("/imageview") {
         path = "/index.html".to_string()
     }
 

@@ -8,3 +8,7 @@ build:
 
 fast-run:
 	cargo run test-images
+
+deps:
+	sudo apt update
+	sudo apt install libvips-dev -y
