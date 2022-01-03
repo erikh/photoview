@@ -1,4 +1,4 @@
-DOCKER_RUN=docker run -it -u $(id -u):$(id -g) -v ${PWD}:/build -w /build 
+DOCKER_RUN=docker run -it -u $$(id -u):$$(id -g) -v ${PWD}:/build -w /build 
 DOCKER_IMAGE=node:latest
 
 

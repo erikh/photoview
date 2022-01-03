@@ -7,6 +7,10 @@ edition = "2021"
 
 [dependencies]
 libvips = "*"
+include_dir = "*"
+async-std = { version = "*", features = ["attributes"] }
+tide = "*"
+env_logger = "*"
 
 [[bin]]
 name = "photoview"
