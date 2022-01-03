@@ -72,7 +72,9 @@ async fn ui(req: Request<State>) -> tide::Result {
         return Ok(Response::builder(500).build());
     }
 
+    //
     // NOTE: all react routes must be reflected here!!!
+    //
     if path == "/" || path.starts_with("/imageview") {
         path = "/index.html".to_string()
     }
